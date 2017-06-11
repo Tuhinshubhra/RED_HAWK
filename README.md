@@ -47,7 +47,7 @@ Run The Tool and Type `fix` This will Install All Required Modules.
 # Usage:
 - git clone `https://github.com/Tuhinshubhra/RED_HAWK`
 - cd RED_HAWK
-- php redh.php
+- php rhawk.php
 - Use the "help" command to see the command list or type in the domain name you want to scan (without Http:// OR Https://).
 - Select whether The Site Runs On HTTPS or not.
 - Leave The Rest To The Scanner
