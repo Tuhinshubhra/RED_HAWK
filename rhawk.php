@@ -23,7 +23,7 @@ All In One Tool For Info Gathering, SQL Vulnerability Scannig and Crawling
 $fgreen
 ---------------------------------------------------------------------------
              [+] Coded By - R3D#@X0R_2H1N A.K.A Tuhinshubhra
-            $lblue [+] Version - 1.0.0
+            $lblue [+] Version - 1.1.0
 ---------------------------------------------------------------------------
 \n";
 thephuckinstart :
