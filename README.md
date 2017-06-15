@@ -56,7 +56,7 @@ Run The Tool and Type `fix` This will Install All Required Modules.
 - Leave The Rest To The Scanner
 
 # Known Issues
-**Issue:** Scanner Stops Working After Cloudflare Detection!
+**ISSUE:** Scanner Stops Working After Cloudflare Detection!
 
 **SOLUTION:** Use The `fix` Command OR Manually Install *php-curl* & *php-xml*
 
