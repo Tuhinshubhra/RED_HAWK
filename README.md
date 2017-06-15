@@ -1,5 +1,5 @@
 # RED HAWK
-#### Version 1.0.0
+#### Version 1.1.0
 #### By R3D#@0R_2H1N A.K.A Tuhinshubhra
 RED HAWK is An All In One Tool For Information Gathering, SQL Vulnerability Scannig and Crawling.Coded In PHP
 
@@ -36,10 +36,13 @@ RED HAWK is An All In One Tool For Information Gathering, SQL Vulnerability Scan
 ---
 # Released Versions:
     - Version 1.0.0 [11-06-2017]
+    - Version 1.1.0 [15-06-2017]
 
 # Changelog:
 - Version 1.0.0
     - Initial Launch
+- Version 1.1.0
+    - Updated The `fix` command
 
 # Installation:
 Run The Tool and Type `fix` This will Install All Required Modules.
