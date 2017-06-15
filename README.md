@@ -54,3 +54,9 @@ Run The Tool and Type `fix` This will Install All Required Modules.
 - Use the "help" command to see the command list or type in the domain name you want to scan (without Http:// OR Https://).
 - Select whether The Site Runs On HTTPS or not.
 - Leave The Rest To The Scanner
+
+# Known Issues
+**Issue:** Scanner Stops Working After Cloudflare Detection!
+
+**SOLUTION:** Use The `fix` Command OR Manually Install *php-curl* & *php-xml*
+
