@@ -42,7 +42,7 @@ elseif ($ip == "fix") {
   echo "\e[91m\e[1m[+] RED HAWK FiX MENU [+]\n$cln";
   echo "\e[32m[+] Installing Required Modules ...\n";
   echo "\e[32m[+] Installing cURL ...\e[0m";
-  system ("sudo apt-get -qq --assume-yes install curl");
+  system ("sudo apt-get -qq --assume-yes install php-curl");
   echo "\n\e[32m[i]$bold cURL Installed Successfully!\e[0m";
   echo "\n\e[32m[+] Installing php-xml ...\e[0m";
   system ("sudo apt-get -qq --assume-yes install php-xml");
