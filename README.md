@@ -60,3 +60,6 @@ Run The Tool and Type `fix` This will Install All Required Modules.
 
 **SOLUTION:** Use The `fix` Command OR Manually Install *php-curl* & *php-xml*
 
+# Watch The Video
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=pH9fn3DExDk" target="_blank"><img src="http://oi68.tinypic.com/9l8xzo.jpg" 
+alt="IMAGE ALT TEXT HERE" border="10" /></a>
