@@ -99,13 +99,14 @@ else
   $cmsurl = $ipsl.$ip;
   $cmssc = file_get_contents($cmsurl);
   if (strpos($cmssc,'/wp-content/') !== false){$tcms="\e[92mWordPress";}else{
-    if (strpos($cmssc,'Joomla') !== false){$tcms="\e[92mJoomla";}else{
-    $drpurl= $ipsl.$ip."/misc/drupal.js";
-    $drpsc = file_get_contents($drpurl);
-      if (strpos($drpsc,'Drupal') !== false){$tcms= "\e[92mDrupal";}else{
-          if (strpos($cmssc,'/skin/frontend/') !== false){$tcms="\e[92mMagento";}else{
-            $tcms="\e[91mCould Not Detect";
-  }}}}
+    if (strrpos($cmssc,'DedeCMS') !== false){$tcms="\e[92mDedeCMS";}else{
+      if (strpos($cmssc,'Joomla') !== false){$tcms="\e[92mJoomla";}else{
+      $drpurl= $ipsl.$ip."/misc/drupal.js";
+      $drpsc = file_get_contents($drpurl);
+        if (strpos($drpsc,'Drupal') !== false){$tcms= "\e[92mDrupal";}else{
+            if (strpos($cmssc,'/skin/frontend/') !== false){$tcms="\e[92mMagento";}else{
+              $tcms="\e[91mCould Not Detect";
+    }}}}}
   echo "$blue"."[+] CMS: $tcms \e[0m";
 
 //detect cloudflare
