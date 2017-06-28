@@ -89,7 +89,9 @@ else
   $urlws = $ipsl.$ip;
   $wsheaders = get_headers($urlws, 1);
   echo"$blue"."[+] Web Server: ";
-  $ws = $wsheaders['Server'];
+  if (is_array($wsheaders['Server'])) { $ws = $wsheaders['Server'][0];}else{
+    $ws = $wsheaders['Server'];
+  }
   if ($ws == ""){echo "\e[91mCould Not Detect\e[0m";}
   else { echo "\e[92m$ws \e[0m";}
   echo"\n";
