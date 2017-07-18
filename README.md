@@ -14,6 +14,7 @@ RED HAWK is An All In One Tool For Information Gathering, SQL Vulnerability Scan
     + Joomla
     + Drupal
     + Magento
+    + Dedecms
 + Whois
 + GEO-IP Scan
 + NMAP Port Scan
@@ -63,5 +64,5 @@ Run The Tool and Type `fix` This will Install All Required Modules.
 Watch The Video TO See How To Solve This Isuue : https://www.youtube.com/watch?v=QuFPY9NFTM8
 
 # Video Demonstration
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=pH9fn3DExDk" target="_blank"><img src="http://oi68.tinypic.com/9l8xzo.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=pH9fn3DExDk" target="_blank"><img src="http://oi68.tinypic.com/9l8xzo.jpg"
 alt="IMAGE ALT TEXT HERE" border="10" /></a>
