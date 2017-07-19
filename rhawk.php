@@ -1,6 +1,7 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 require_once('common/cmsDetect.php');
+require_once('common/thirdDetect.php');
 $blue = "\e[34m";
 $lblue = "\e[36m";
 $cln = "\e[0m";
@@ -22,7 +23,7 @@ $bold
 All In One Tool For Info Gathering, SQL Vulnerability Scannig and Crawling
 $fgreen
 ---------------------------------------------------------------------------
-             [+] Coded By - R3D#@X0R_2H1N A.K.A Tuhinshubhra
+             [+] Coded By - Happytaoer
             $lblue [+] Version - 1.1.0
 ---------------------------------------------------------------------------
 \n";
@@ -141,26 +142,8 @@ else
     }
 
 //The scans starts here
-
-    echo "\n\n$cln";
-    echo "\n\n$bold".$lblue."W H O I S   L O O K U P\n";
-    echo "========================";
-    echo"\n\n$cln";
-    $urlwhois= "http://api.hackertarget.com/whois/?q=". $ip;
-    $resultwhois = file_get_contents ($urlwhois);
-    echo"\t";
-    echo $resultwhois ;
-    echo"\n\n$cln";
-
-
-    echo"\n\n$bold".$lblue."G E O  I P  L O O K  U P\n";
-    echo "=========================";
-    echo"\n\n$cln";
-    $urlgip= "http://api.hackertarget.com/geoip/?q=". $ip;
-    $resultgip = file_get_contents ($urlgip);
-    echo $resultgip ;
-    echo "\n\n$cln";
-
+    $thirdDetect = new ThirdDetect($ip, $bold, $lblue, $cln);
+    $thirdDetect->detect();
 
     echo "\n\n$bold".$lblue."H T T P   H E A D E R S\n";
     echo "=======================";
@@ -168,32 +151,6 @@ else
     echo $resulthh ;
     echo "\n\n";
 
-
-    echo "\n\n$bold".$lblue."D N S   L O O K U P\n";
-    echo "===================";
-    echo"\n\n$cln";
-    $urldlup= "http://api.hackertarget.com/dnslookup/?q=". $ip;
-    $resultdlup = file_get_contents ($urldlup);
-    echo $resultdlup ;
-    echo "\n\n";
-
-
-    echo "\n\n$bold".$lblue."S U B N E T   C A L C U L A T I O N\n";
-    echo "====================================";
-    echo"\n\n$cln";
-    $urlscal= "http://api.hackertarget.com/subnetcalc/?q=". $ip;
-    $resultscal = file_get_contents ($urlscal);
-    echo $resultscal ;
-    echo "\n\n";
-
-
-    echo "\n\n$bold".$lblue."N M A P   P O R T   S C A N\n";
-    echo "============================";
-    echo"\n\n$cln";
-    $urlnmap= "http://api.hackertarget.com/nmap/?q=". $ip;
-    $resultnmap = file_get_contents ($urlnmap);
-    echo $resultnmap ;
-    echo "\n";
 //----------------------------------------------------------//
 //        Subdomains Finder
 //---------------------------------------------------------//
