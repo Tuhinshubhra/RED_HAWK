@@ -103,8 +103,8 @@ RED HAWK's `CMS Detector` currently is able to detect the following CMSs (Conten
 Watch The Video TO See How To Solve This Isuue : https://www.youtube.com/watch?v=QuFPY9NFTM8
 
 # Video Demonstration
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=pH9fn3DExDk" target="_blank"><img src="http://oi68.tinypic.com/9l8xzo.jpg" 
-alt="IMAGE ALT TEXT HERE" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=Jt9kBFiJDrE" target="_blank"><img src="https://s28.postimg.org/p3sgqeqd9/redhawk-thumb.png" 
+alt="Video Thumbnail" border="10" /></a>
 
 # Suggestions And Feedbacks
 Want to contribute to RED HAWK or point out something wrong? Just create a new issue here: https://github.com/Tuhinshubhra/RED_HAWK/issues/new
