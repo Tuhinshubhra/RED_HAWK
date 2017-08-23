@@ -20,4 +20,4 @@ The first three files are mendetory for the RED HAWK scanner. These files have t
  - backup.ini : contains a list of commonly known backup files.
  - others.ini : basically all the other lists.
 
-• Pleas NOTE the lists are separeted by COMMA "," any other type of separation used will cause error while crawling.
+• Please NOTE the lists are separeted by COMMA "," any other type of separation used will cause error while crawling.
