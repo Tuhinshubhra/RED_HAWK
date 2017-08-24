@@ -751,6 +751,35 @@ askscan:
                 echo $bold . $red . "\n[U] Seems You Tampered With The Script !! Please Take The Trouble OF Checking For Update Manually!!! \n\n";
               }
           }
+        elseif ($scan == "F" || $scan == "f"){
+          echo "\n\e[91m\e[1m[+] RED HAWK FiX MENU [+]\n\n$cln";
+          echo $bold . $blue . "[+] Checking If cURL module is installed ...\n";
+          if (!extension_loaded('curl'))
+            {
+              echo $bold . $red . "[!] cURL Module Not Installed ! \n";
+              echo $yellow . "[*] Installing cURL. (Operation requeires sudo permission so you might be asked for password) \n" . $cln;
+              system("sudo apt-get -qq --assume-yes install php-curl");
+              echo $bold . $fgreen . "[i] cURL Installed. \n";
+            }
+          else
+            {
+              echo $bold . $fgreen . "[i] cURL is already installed, Skipping To Next \n";
+            }
+          echo $bold . $blue . "[+] Checking If php-XML module is installed ...\n";
+          if (!extension_loaded('dom'))
+            {
+              echo $bold . $red . "[!] php-XML Module Not Installed ! \n";
+              echo $yellow . "[*] Installing php-XML. (Operation requeires sudo permission so you might be asked for password) \n" . $cln;
+              system("sudo apt-get -qq --assume-yes install php-xml");
+              echo $bold . $fgreen . "[i] DOM Installed. \n";
+            }
+          else
+            {
+              echo $bold . $fgreen . "[i] php-XML is already installed, You Are All SET ;) \n";
+            }
+          echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n";
+          exit;
+        }
         elseif ($scan == "A" || $scan == "a")
           {
 
