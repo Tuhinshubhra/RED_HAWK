@@ -113,7 +113,7 @@ I'd love to hear from you.
 # Support and Donations
 Found RED HAWK cool? well you could buy me a cup of tea ;) (no alcohol plz xD) just send any amount of donations (in BTC) to this address : **1NbiQidWWVVhWknsfPSN1MuksF8cbXWCku**
 
-Can't donate? well that's no problem just drop a **THANK YOU** this will motivate me do create more exciting stuffs for you ;)
+Can't donate? well that's no problem just drop a **THANK YOU** this will motivate me to create more exciting stuffs for you ;)
 
 # TODOs
 
