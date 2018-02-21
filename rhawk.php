@@ -739,7 +739,7 @@ askscan:
             if ($latestversion > $rhversion)
               {
                 echo $bold . $fgreen . "\n\n[U] Update Available, Please Update Your Version Of RED HAWK \n" . $cln;
-                echo $bold . $white . "    Link: htttps://github.com/Tuhinshubhra/RED_HAWK\n\n" . $cln;
+                echo $bold . $white . "    Link: https://github.com/Tuhinshubhra/RED_HAWK\n\n" . $cln;
               }
 
             elseif ($rhversion == $latestversion)
