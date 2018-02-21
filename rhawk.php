@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+error_reporting(1);
 require 'functions.php';
 require 'var.php';
 echo $cln;
@@ -584,6 +584,9 @@ askscan:
                       }
                     $reallink = $ipsl . $ip;
                     echo "\n\n";
+                    echo $bold . $yellow ."Enumerating Wordpress Users";
+                    echo "\n\n";
+                    get_wp__user($reallink);
                     echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
                     trim(fgets(STDIN, 1024));
                     goto scanlist;
