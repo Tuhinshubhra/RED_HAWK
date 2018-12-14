@@ -40,7 +40,7 @@ elseif ($ip == "fix")
     if (!extension_loaded('curl'))
       {
         echo $bold . $red . "[!] cURL Module Not Installed ! \n";
-        echo $yellow . "[*] Installing cURL. (Operation requeires sudo permission so you might be asked for password) \n" . $cln;
+        echo $yellow . "[*] Installing cURL. (Operation requires sudo permission so you might be asked for password) \n" . $cln;
         system("sudo apt-get -qq --assume-yes install php-curl");
         echo $bold . $fgreen . "[i] cURL Installed. \n";
       }
@@ -52,7 +52,7 @@ elseif ($ip == "fix")
     if (!extension_loaded('dom'))
       {
         echo $bold . $red . "[!] php-XML Module Not Installed ! \n";
-        echo $yellow . "[*] Installing php-XML. (Operation requeires sudo permission so you might be asked for password) \n" . $cln;
+        echo $yellow . "[*] Installing php-XML. (Operation requires sudo permission so you might be asked for password) \n" . $cln;
         system("sudo apt-get -qq --assume-yes install php-xml");
         echo $bold . $fgreen . "[i] DOM Installed. \n";
       }
