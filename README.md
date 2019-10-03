@@ -6,8 +6,6 @@
 #### By R3D#@0R_2H1N A.K.A Tuhinshubhra
 All in one tool for **Information Gathering** and **Vulnerability Scanning**
 
-![Alt text](https://s28.postimg.org/3lunhz2kt/Screenshot_from_2017-08-11_19-30-32.png "Screenshot")
-
 # Scans That You Can Perform Using RED HAWK :
 + Basic Scan
 	- Site Title **NEW**
@@ -106,7 +104,7 @@ RED HAWK's `CMS Detector` currently is able to detect the following CMSs (Conten
 Watch The Video TO See How To Solve This Isuue : https://www.youtube.com/watch?v=QuFPY9NFTM8
 
 # Video Demonstration
-<a href="https://www.youtube.com/watch?v=Jt9kBFiJDrE" target="_blank"><img src="https://s28.postimg.org/p3sgqeqd9/redhawk-thumb.png" 
+<a href="https://www.youtube.com/watch?v=Jt9kBFiJDrE" target="_blank"><img src="https://i.imgur.com/SXDWohl.png" 
 alt="Video Thumbnail" border="10" /></a>
 
 # Suggestions And Feedbacks
