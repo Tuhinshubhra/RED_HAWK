@@ -6,7 +6,7 @@ echo $cln;
 function update()
     {
         echo "\n\e[91m\e[1m[+] RED HAWK UPDATE UTILITY [+]\nUpdate in progress, please wait...\n\n$cln";
-        //system("git fetch origin && git reset --hard origin/master && git clean -f -d");
+        system("git fetch origin && git reset --hard origin/master && git clean -f -d");
         echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n" . $cln;
         exit;
     }
