@@ -31,6 +31,7 @@ if ($ip == "help")
     echo $fgreen . "[1] help:$cln View The Help Menu\n";
     echo $bold . $fgreen . "[2] fix:$cln Installs All Required Modules (Suggested If You Are Running The Tool For The First Time)\n";
     echo $bold . $fgreen . "[3] URL:$cln Enter The Domain Name Which You Want To Scan (Format:www.sample.com / sample.com)\n";
+    echo $bold . $fgreen . "[4] update:$cln Updates The Script To The Newest Version Available.\n";
     goto thephuckinstart;
   }
 elseif ($ip == "fix")
