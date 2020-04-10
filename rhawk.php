@@ -3,6 +3,14 @@ error_reporting(0);
 require 'functions.php';
 require 'var.php';
 echo $cln;
+function update()
+    {
+        echo "\n\e[91m\e[1m[+] RED HAWK UPDATE UTILITY [+]\nUpdate in progress, please wait...\n\n$cln";
+        system("git fetch origin && git reset --hard origin/master && git clean -f -d");
+        echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n" . $cln;
+        exit;
+    }
+    
 system("clear");
 redhawk_banner();
 if (extension_loaded('curl') || extension_loaded('dom'))
@@ -31,6 +39,7 @@ if ($ip == "help")
     echo $fgreen . "[1] help:$cln View The Help Menu\n";
     echo $bold . $fgreen . "[2] fix:$cln Installs All Required Modules (Suggested If You Are Running The Tool For The First Time)\n";
     echo $bold . $fgreen . "[3] URL:$cln Enter The Domain Name Which You Want To Scan (Format:www.sample.com / sample.com)\n";
+    echo $bold . $fgreen . "[4] update:$cln Updates The Script To The Newest Version Available.\n";
     goto thephuckinstart;
   }
 elseif ($ip == "fix")
@@ -63,6 +72,11 @@ elseif ($ip == "fix")
     echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n";
     exit;
   }
+elseif ($ip == "update")
+  {
+    update();
+  }
+
 elseif (strpos($ip, '://') !== false)
   {
     echo $bold . $red . "\n[!] (HTTP/HTTPS) Detected In Input! Enter URL Without Http/Https\n" . $CURLOPT_RETURNTRANSFER;
@@ -738,17 +752,37 @@ askscan:
             echo "\n" . $bold . $lblue . "[L] Latest Version:  " . $latestversion . $cln;
             if ($latestversion > $rhversion)
               {
-                echo $bold . $fgreen . "\n\n[U] Update Available, Please Update Your Version Of RED HAWK \n" . $cln;
-                echo $bold . $white . "    Link: https://github.com/Tuhinshubhra/RED_HAWK\n\n" . $cln;
+                askupdate:
+                    userinput("There's An Update Available, Would You Like To Update Automatically?");
+                    $updateask = trim(fgets(STDIN, 1024));
+                    if (!in_array($updateask, array("y","Y","n","N"), true))
+                    {
+                        echo $bold . $red . "\n[!] Invalid Input! Please Enter a Valid Option! \n\n" . $cln;
+                        goto askupdate;
+                    }
+                    else
+                    {
+                        if ($updateask == "y" | $updateask == "Y")
+                        {
+                            update();
+                        }
+                        elseif ($updateask == "n" | $updateask == "N")
+                        {
+                            echo $bold . $red . "\n[!] Aborting... \n\n" . $cln;
+                            goto scanlist;
+                        }
+                    }
+            
               }
-
             elseif ($rhversion == $latestversion)
               {
                 echo $bold . $fgreen . "\n[i] You are already running the latest version of RED HAWK. \n\n" . $cln;
+                goto scanlist;
               }
             else
               {
-                echo $bold . $red . "\n[U] Seems You Tampered With The Script !! Please Take The Trouble OF Checking For Update Manually!!! \n\n";
+                echo $bold . $red . "\n[U] Seems You Tampered With The Script !! Please Take The Trouble OR Force An Update Manually Using `update` Command!!! \n\n" . $cln;
+                goto scanlist;
               }
           }
         elseif ($scan == "F" || $scan == "f"){
