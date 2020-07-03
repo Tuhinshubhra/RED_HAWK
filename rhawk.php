@@ -67,9 +67,9 @@ elseif ($ip == "fix")
       }
     else
       {
-        echo $bold . $fgreen . "[i] php-XML is already installed, You Are All SET ;) \n";
+        echo $bold . $fgreen . "[i] php-XML artıq quraşdırılıb, Hərşey Hazırdı ;) \n";
       }
-    echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n";
+    echo $bold . $fgreen . "[i] Proses uğurla başa çatdı! Zəhmət Olmasa RED HAWK Yenidən Başladın \n";
     exit;
   }
 elseif ($ip == "update")
@@ -79,7 +79,7 @@ elseif ($ip == "update")
 
 elseif (strpos($ip, '://') !== false)
   {
-    echo $bold . $red . "\n[!] (HTTP/HTTPS) Detected In Input! Enter URL Without Http/Https\n" . $CURLOPT_RETURNTRANSFER;
+    echo $bold . $red . "\n[!] (HTTP/HTTPS) Giriş aşkarlandı! URL-i  Http/Https -siz Daxil Edin \n" . $CURLOPT_RETURNTRANSFER;
     goto thephuckinstart;
   }
 elseif (strpos($ip, '.') == false)
@@ -89,13 +89,13 @@ elseif (strpos($ip, '.') == false)
   }
 elseif (strpos($ip, ' ') !== false)
   {
-    echo $bold . $red . "\n[!] Invalid URL Format! Enter A Valid URL\n" . $cln;
+    echo $bold . $red . "\n[!] Yanlış URL Formatı! Düzgün URL Daxil Edin\n" . $cln;
     goto thephuckinstart;
   }
 else
   {
     echo "\n";
-    userinput("Enter 1 For HTTP OR Enter 2 For HTTPS");
+    userinput("HTTP üçün 1 və ya HTPPS üçün 2 Daxil Edin");
     echo $cln . $bold . $fgreen;
     $ipsl = trim(fgets(STDIN, 1024));
     if ($ipsl == "2")
@@ -111,14 +111,14 @@ scanlist:
     system("clear");
     echo $bold . $blue . "
       +--------------------------------------------------------------+
-      +                  List Of Scans Or Actions                    +
+      +                  Tarama və ya əməliyyatların siyahısı                    +
       +--------------------------------------------------------------+
 
             $lblue Scanning Site : " . $fgreen . $ipsl . $ip . $blue . "
       \n\n";
     echo $yellow . " [0]  Basic Recon$white (Site Title, IP Address, CMS, Cloudflare Detection, Robots.txt Scanner)$yellow \n [1]  Whois Lookup \n [2]  Geo-IP Lookup \n [3]  Grab Banners \n [4]  DNS Lookup \n [5]  Subnet Calculator \n [6]  NMAP Port Scan \n [7]  Subdomain Scanner \n [8]  Reverse IP Lookup & CMS Detection \n [9]  SQLi Scanner$white (Finds Links With Parameter And Scans For Error Based SQLi)$yellow \n [10] Bloggers View$white (Information That Bloggers Might Be Interested In)$yellow \n [11] WordPress Scan$white (Only If The Target Site Runs On WP)$yellow \n [12] Crawler \n [13] MX Lookup \n$magenta [A]  Scan For Everything - (The Old Lame Scanner) \n$blue [F]  Fix (Checks For Required Modules and Installs Missing Ones) \n$fgreen [U]  Check For Updates \n$white [B]  Scan Another Website (Back To Site Selection) \n$red [Q]  Quit! \n\n" . $cln;
 askscan:
-    userinput("Choose Any Scan OR Action From The Above List");
+    userinput("Yuxarıdakı siyahıdan hər hansı bir tarama və ya əməliyyatı seçin");
     $scan = trim(fgets(STDIN, 1024));
 
     if (!in_array($scan, array(
@@ -148,7 +148,7 @@ askscan:
         'u'
     ), true))
       {
-        echo $bold . $red . "\n[!] Invalid Input! Please Enter a Valid Option! \n\n" . $cln;
+        echo $bold . $red . "\n[!] Yanlış Giriş! Zəhmət Olmasa Düzgün Giriş Seçin! \n\n" . $cln;
         goto askscan;
       }
     else
@@ -159,7 +159,7 @@ askscan:
           }
         elseif ($scan == 'q' | $scan == 'Q')
           {
-            echo "\n\n\t Good Bye - Have a nice day :)\n\n";
+            echo "\n\n\t Good Bye - Xeyirli Günlər :)\n\n";
             die();
           }
         elseif ($scan == 'b' || $scan == 'B')
@@ -171,11 +171,11 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : BASIC SCAN" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : BASIC SCAN" . $cln;
             echo "\n\n";
-            echo $bold . $lblue . "[iNFO] Site Title: " . $green;
+            echo $bold . $lblue . "[iNFO] Sayt Başlığı: " . $green;
             echo getTitle($reallink);
             echo $cln;
             $wip = gethostbyname($ip);
@@ -189,7 +189,7 @@ askscan:
             echo $lblue . $bold . "[iNFO] Robots File:$cln ";
             robotsdottxt($reallink);
             echo "\n\n";
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
@@ -197,15 +197,15 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : WHOIS Lookup" . $cln;
-            echo $bold . $lblue . "\n[~] Whois Lookup Result: \n\n" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : WHOIS Lookup" . $cln;
+            echo $bold . $lblue . "\n[~] Whois Lookup Nəticəsi: \n\n" . $cln;
             $urlwhois    = "http://api.hackertarget.com/whois/?q=" . $lwwww;
             $resultwhois = file_get_contents($urlwhois);
             echo $bold . $fgreen . $resultwhois;
             echo "\n\n";
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
@@ -213,9 +213,9 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : GEO-IP Lookup" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : GEO-IP Lookup" . $cln;
             echo "\n\n";
             $urlgip    = "http://api.hackertarget.com/geoip/?q=" . $lwwww;
             $resultgip = readcontents($urlgip);
@@ -225,7 +225,7 @@ askscan:
                 echo $bold . $lblue . "[GEO-IP]$green $geoip \n";
               }
             echo "\n\n";
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
@@ -233,9 +233,9 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : Banner Grabbing" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : Banner Grabbing" . $cln;
             echo "\n\n";
             $hdr = get_headers($reallink);
             foreach ($hdr as $shdr)
@@ -243,7 +243,7 @@ askscan:
                 echo $bold . $lblue . "\n" . $green . $shdr;
               }
             echo "\n\n";
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
@@ -251,9 +251,9 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : DNS Lookup" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : DNS Lookup" . $cln;
             echo "\n\n";
             $urldlup    = "http://api.hackertarget.com/dnslookup/?q=" . $lwwww;
             $resultdlup = readcontents($urldlup);
@@ -264,7 +264,7 @@ askscan:
                 echo $bold . $lblue . "\n[DNS Lookup] " . $green . $dnslkup;
               }
             echo "\n\n";
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
@@ -272,9 +272,9 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : SubNet Calculator" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : SubNet Calculator" . $cln;
             echo "\n\n";
             $urlscal    = "http://api.hackertarget.com/subnetcalc/?q=" . $lwwww;
             $resultscal = readcontents($urlscal);
@@ -285,7 +285,7 @@ askscan:
                 echo $bold . $lblue . "\n[SubNet Calc] " . $green . $sc;
               }
             echo "\n\n";
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
@@ -293,22 +293,22 @@ askscan:
           {
             $reallink = $ipsl . $ip;
             $lwwww    = str_replace("www.", "", $ip);
-            echo "\n$cln" . $lblue . $bold . "[+] Scanning Begins ... \n";
-            echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
-            echo $bold . $yellow . "[S] Scan Type : Subdomain Scanner" . $cln;
+            echo "\n$cln" . $lblue . $bold . "[+] Scanning Başlayır ... \n";
+            echo $blue . $bold . "[i] Scanning Olunan Sayt:\e[92m $ipsl" . "$ip \n";
+            echo $bold . $yellow . "[S] Scan Tipi : Subdomain Scanner" . $cln;
             $urlsd      = "http://api.hackertarget.com/hostsearch/?q=" . $lwwww;
             $resultsd   = readcontents($urlsd);
             $subdomains = trim($resultsd, "\n");
             $subdomains = explode("\n", $subdomains);
             unset($subdomains['0']);
             $sdcount = count($subdomains);
-            echo "\n" . $blue . $bold . "[i] Total Subdomains Found : " . $green . $sdcount . "\n\n" . $cln;
+            echo "\n" . $blue . $bold . "[i] Ümumi Tapılmış Subdomainlər : " . $green . $sdcount . "\n\n" . $cln;
             foreach ($subdomains as $subdomain)
               {
                 echo $bold . $lblue . "[+] Subdomain: $fgreen" . (str_replace(",", "\n\e[36m[-] IP: $fgreen", $subdomain));
                 echo "\n\n" . $cln;
               }
-            echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
+            echo $bold . $yellow . "[*] Scanning Başa Çatdı. Davam etmək üçün Enter düyməsini basın və ya dayandırmaq üçün CTRL + C düymələrini basın\n\n";
             trim(fgets(STDIN, 1024));
             goto scanlist;
           }
