@@ -5,9 +5,9 @@ require 'var.php';
 echo $cln;
 function update()
     {
-        echo "\n\e[91m\e[1m[+] RED HAWK UPDATE UTILITY [+]\nUpdate in progress, please wait...\n\n$cln";
+        echo "\n\e[91m\e[1m[+] RED HAWK YENİLƏMƏ KÖMƏKÇİSİ [+]\nYeniləmə davam edir, zəhmət olmasa gözləyin ...\n\n$cln";
         system("git fetch origin && git reset --hard origin/master && git clean -f -d");
-        echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n" . $cln;
+        echo $bold . $fgreen . "[i] Proses uğurla başa çatdı! Xahiş edirəm RED HAWK-ı yenidən başladın \n" . $cln;
         exit;
     }
     
@@ -20,50 +20,50 @@ else
   {
     if (!extension_loaded('curl'))
       {
-        echo $bold . $red . "\n[!] cURL Module Is Missing! Try 'fix' command OR Install php-curl" . $cln;
+        echo $bold . $red . "\n[!] cURL Modulu Yoxdur! Fix əmrini cəhd edin və ya php-curl quraşdırın" . $cln;
       }
     if (!extension_loaded('dom'))
       {
-        echo $bold . $red . "\n[!] DOM Module Is Missing! Try 'fix' command OR Install php-xml\n" . $cln;
+        echo $bold . $red . "\n[!] DOM Modulu Yoxdur! Fix əmrini cəhd edin və ya php-xml quraşdırın\n" . $cln;
       }
   }
 thephuckinstart:
 echo "\n";
-userinput("Enter The Website You Want To Scan ");
+userinput("Scan Etmək İstədiyiniz Website-ı Daxil Edin ");
 $ip = trim(fgets(STDIN, 1024));
 if ($ip == "help")
   {
-    echo "\n\n[+] RED HAWK Help Screen [+] \n\n";
-    echo $bold . $lblue . "Commands\n";
+    echo "\n\n[+] RED HAWK Yardım Ekranı [+] \n\n";
+    echo $bold . $lblue . "Komandalar\n";
     echo "========\n";
-    echo $fgreen . "[1] help:$cln View The Help Menu\n";
-    echo $bold . $fgreen . "[2] fix:$cln Installs All Required Modules (Suggested If You Are Running The Tool For The First Time)\n";
-    echo $bold . $fgreen . "[3] URL:$cln Enter The Domain Name Which You Want To Scan (Format:www.sample.com / sample.com)\n";
-    echo $bold . $fgreen . "[4] update:$cln Updates The Script To The Newest Version Available.\n";
+    echo $fgreen . "[1] help:$cln Yardım Menyusuna Bax\n";
+    echo $bold . $fgreen . "[2] fix:$cln Bütün Zəruri Modulları Quraşdırır (Tövsiyə Olunur Əgər Aləti İlk Dəfə İşlədirsinizsə)\n";
+    echo $bold . $fgreen . "[3] URL:$cln Scan Etmək İstədiyiniz Domain Adını Daxil Edin (Format:www.sample.com / sample.com)\n";
+    echo $bold . $fgreen . "[4] update:$cln Məqaləni Mövcud olan ən yeni versiyaya yeniləyir.\n";
     goto thephuckinstart;
   }
 elseif ($ip == "fix")
   {
-    echo "\n\e[91m\e[1m[+] RED HAWK FiX MENU [+]\n\n$cln";
-    echo $bold . $blue . "[+] Checking If cURL module is installed ...\n";
+    echo "\n\e[91m\e[1m[+] RED HAWK DÜZƏLTMƏ MENYUSU [+]\n\n$cln";
+    echo $bold . $blue . "[+] CURL modulu quraşdırılıbmı yoxlanılır ...\n";
     if (!extension_loaded('curl'))
       {
-        echo $bold . $red . "[!] cURL Module Not Installed ! \n";
-        echo $yellow . "[*] Installing cURL. (Operation requires sudo permission so you might be asked for password) \n" . $cln;
+        echo $bold . $red . "[!] cURL Modulu Quraşdırılmayıb ! \n";
+        echo $yellow . "[*] cURL Quraşdırılır. (Əməliyyat sudo icazəsi tələb edir belə ki sizdən şifrə istənə bilər) \n" . $cln;
         system("sudo apt-get -qq --assume-yes install php-curl");
-        echo $bold . $fgreen . "[i] cURL Installed. \n";
+        echo $bold . $fgreen . "[i] cURL Quraşdırıldı. \n";
       }
     else
       {
-        echo $bold . $fgreen . "[i] cURL is already installed, Skipping To Next \n";
+        echo $bold . $fgreen . "[i] cURL artıq quraşdırılıb, Digərinə Keçid Olunur \n";
       }
-    echo $bold . $blue . "[+] Checking If php-XML module is installed ...\n";
+    echo $bold . $blue . "[+] Php-XML modulu quraşdırılıbmı yoxlanılır ...\n";
     if (!extension_loaded('dom'))
       {
-        echo $bold . $red . "[!] php-XML Module Not Installed ! \n";
-        echo $yellow . "[*] Installing php-XML. (Operation requires sudo permission so you might be asked for password) \n" . $cln;
+        echo $bold . $red . "[!] php-XML Modulu Quraşdırılmayıb ! \n";
+        echo $yellow . "[*] php-XML Quraşdırılır. (Əməliyyat sudo icazəsi tələb edir belə ki sizdən şifrə istənə bilər) \n" . $cln;
         system("sudo apt-get -qq --assume-yes install php-xml");
-        echo $bold . $fgreen . "[i] DOM Installed. \n";
+        echo $bold . $fgreen . "[i] DOM Quraşdırıldı. \n";
       }
     else
       {
