@@ -201,7 +201,7 @@ askscan:
             echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
             echo $bold . $yellow . "[S] Scan Type : WHOIS Lookup" . $cln;
             echo $bold . $lblue . "\n[~] Whois Lookup Result: \n\n" . $cln;
-            $urlwhois    = "http://api.hackertarget.com/whois/?q=" . $lwwww;
+            $urlwhois    = "https://webeye.herokuapp.com/whois/?q=" . $lwwww;
             $resultwhois = file_get_contents($urlwhois);
             echo $bold . $fgreen . $resultwhois;
             echo "\n\n";
