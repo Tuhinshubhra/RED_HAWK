@@ -320,7 +320,7 @@ askscan:
             echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
             echo $bold . $yellow . "[S] Scan Type : Nmap Port Scan" . $cln;
             echo $bold . $lblue . "\n[~] Port Scan Result: \n\n" . $cln;
-            $urlnmap    = "http://api.zaeem20.repl.co/nmap/?q=" . $lwwww;
+            $urlnmap    = "https://webeye.herokuapp.com/nmap/?q=" . $lwwww;
             $resultnmap = readcontents($urlnmap);
             echo $bold . $fgreen . $resultnmap;
             echo "\n\n";
