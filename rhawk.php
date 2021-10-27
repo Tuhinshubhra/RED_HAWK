@@ -201,7 +201,7 @@ askscan:
             echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
             echo $bold . $yellow . "[S] Scan Type : WHOIS Lookup" . $cln;
             echo $bold . $lblue . "\n[~] Whois Lookup Result: \n\n" . $cln;
-            $urlwhois    = "https://webeye.herokuapp.com/whois/?q=" . $lwwww;
+            $urlwhois    = "https://api.webeye.ml/whois/?q=" . $lwwww;
             $resultwhois = file_get_contents($urlwhois);
             echo $bold . $fgreen . $resultwhois;
             echo "\n\n";
@@ -320,7 +320,7 @@ askscan:
             echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
             echo $bold . $yellow . "[S] Scan Type : Nmap Port Scan" . $cln;
             echo $bold . $lblue . "\n[~] Port Scan Result: \n\n" . $cln;
-            $urlnmap    = "https://webeye.herokuapp.com/nmap/?q=" . $lwwww;
+            $urlnmap    = "https://api.webeye.ml/nmap/?q=" . $lwwww;
             $resultnmap = readcontents($urlnmap);
             echo $bold . $fgreen . $resultnmap;
             echo "\n\n";
