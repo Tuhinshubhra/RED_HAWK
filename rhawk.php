@@ -855,7 +855,7 @@ askscan:
             echo "\n\n$bold" . $lblue . "W H O I S   L O O K U P\n";
             echo "========================";
             echo "\n\n$cln";
-            $urlwhois    = "http://api.hackertarget.com/whois/?q=" . $lwwww;
+            $urlwhois    = "http://api.webeye.ml/whois/?q=" . $lwwww;
             $resultwhois = file_get_contents($urlwhois);
             echo "\t";
             echo $resultwhois;
@@ -898,7 +898,7 @@ askscan:
             echo "\n\n$bold" . $lblue . "N M A P   P O R T   S C A N\n";
             echo "============================";
             echo "\n\n$cln";
-            $urlnmap    = "http://api.hackertarget.com/nmap/?q=" . $lwwww;
+            $urlnmap    = "http://api.webeye.ml/nmap/?q=" . $lwwww;
             $resultnmap = file_get_contents($urlnmap);
             echo $resultnmap;
             echo "\n";
