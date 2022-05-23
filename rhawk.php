@@ -116,7 +116,7 @@ scanlist:
 
             $lblue Scanning Site : " . $fgreen . $ipsl . $ip . $blue . "
       \n\n";
-    echo $yellow . " [0]  Basic Recon$white (Site Title, IP Address, CMS, Cloudflare Detection, Robots.txt Scanner)$yellow \n [1]  Whois Lookup \n [2]  Geo-IP Lookup \n [3]  Grab Banners \n [4]  DNS Lookup \n [5]  Subnet Calculator \n [6]  NMAP Port Scan \n [7]  Subdomain Scanner \n [8]  Reverse IP Lookup & CMS Detection \n [9]  SQLi Scanner$white (Finds Links With Parameter And Scans For Error Based SQLi)$yellow \n [10] Bloggers View$white (Information That Bloggers Might Be Interested In)$yellow \n [11] WordPress Scan$white (Only If The Target Site Runs On WP)$yellow \n [12] Crawler \n [13] MX Lookup \n$magenta [A]  Scan For Everything - (The Old Lame Scanner) \n$blue [F]  Fix (Checks For Required Modules and Installs Missing Ones) \n$fgreen [U]  Check For Updates \n$white [B]  Scan Another Website (Back To Site Selection) \n$red [Q]  Quit! \n\n" . $cln;
+    echo $yellow . " [0]  Basic Recon$white (Site Title, IP Address, CMS, Cloudflare Detection, WAF Detection, Robots.txt Scanner)$yellow \n [1]  Whois Lookup \n [2]  Geo-IP Lookup \n [3]  Grab Banners \n [4]  DNS Lookup \n [5]  Subnet Calculator \n [6]  NMAP Port Scan \n [7]  Subdomain Scanner \n [8]  Reverse IP Lookup & CMS Detection \n [9]  SQLi Scanner$white (Finds Links With Parameter And Scans For Error Based SQLi)$yellow \n [10] Bloggers View$white (Information That Bloggers Might Be Interested In)$yellow \n [11] WordPress Scan$white (Only If The Target Site Runs On WP)$yellow \n [12] Crawler \n [13] MX Lookup \n$magenta [A]  Scan For Everything - (The Old Lame Scanner) \n$blue [F]  Fix (Checks For Required Modules and Installs Missing Ones) \n$fgreen [U]  Check For Updates \n$white [B]  Scan Another Website (Back To Site Selection) \n$red [Q]  Quit! \n\n" . $cln;
 askscan:
     userinput("Choose Any Scan OR Action From The Above List");
     $scan = trim(fgets(STDIN, 1024));
@@ -183,10 +183,12 @@ askscan:
             echo $bold . $lblue . "[iNFO] Web Server: ";
             WEBserver($reallink);
             echo "\n";
-            echo $bold . $lblue . "[iNFO] CMS: \e[92m" . CMSdetect($reallink) . $cln;
+            echo $bold . $lblue . "[iNFO] CMS Detect: \e[92m" . CMSdetect($reallink) . $cln;
             echo $lblue . $bold . "\n[iNFO] Cloudflare: ";
-            cloudflaredetect($lwwww);
-            echo $lblue . $bold . "[iNFO] Robots File:$cln ";
+            cloudflaredetect($reallink);
+            echo $lblue . $bold . "[iNFO] WAF Detect: ";
+            $cln . $bold . WAF_Detect($ip) . $cln;
+            echo $lblue . $bold . "\n[iNFO] Robots File:$cln ";
             robotsdottxt($reallink);
             echo "\n\n";
             echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
@@ -201,8 +203,8 @@ askscan:
             echo $blue . $bold . "[i] Scanning Site:\e[92m $ipsl" . "$ip \n";
             echo $bold . $yellow . "[S] Scan Type : WHOIS Lookup" . $cln;
             echo $bold . $lblue . "\n[~] Whois Lookup Result: \n\n" . $cln;
-            $urlwhois    = "https://api.webeye.ml/whois/?q=" . $lwwww;
-            $resultwhois = file_get_contents($urlwhois);
+            $urlwhois    = "http://api.webeye.ml/whois/?q=" . $lwwww;
+            $resultwhois = readcontents($urlwhois);
             echo $bold . $fgreen . $resultwhois;
             echo "\n\n";
             echo $bold . $yellow . "[*] Scanning Complete. Press Enter To Continue OR CTRL + C To Stop\n\n";
@@ -844,18 +846,19 @@ askscan:
             WEBserver($reallink);
             echo "\n";
 
-            echo "$blue" . "[+] CMS: \e[92m" . CMSdetect($reallink) . " \e[0m";
+            echo "$blue" . "[+] CMS Detect: \e[92m" . CMSdetect($reallink) . " \e[0m";
 
             echo "\n$blue" . "[+] Cloudflare: ";
             cloudflaredetect($reallink);
-
-            echo "$blue" . "[+] Robots File:$cln ";
+            echo $blue . "[+] WAF Detect: ". $cln;
+            WAF_Detect($ip);
+            echo "$blue" . "\n[+] Robots File:$cln ";
             robotsdottxt($reallink);
             echo "\n\n$cln";
             echo "\n\n$bold" . $lblue . "W H O I S   L O O K U P\n";
             echo "========================";
             echo "\n\n$cln";
-            $urlwhois    = "http://api.webeye.ml/whois/?q=" . $lwwww;
+            $urlwhois    = "https://api.webeye.ml/whois/?q=" . $lwwww;
             $resultwhois = file_get_contents($urlwhois);
             echo "\t";
             echo $resultwhois;
