@@ -33,11 +33,26 @@ function WEBserver($urlws){
 }
 
 
+function WAF_Detect($domains){
+  $response = json_decode(file_get_contents('http://api.webeye.ml/waf/?q=' . $domains), true);
+  if ($response['waf']){
+    $arr = $response["manufacturer"];
+    if (is_array($arr)){
+      echo "\e[92m".join("\e[91m, \e[92m", $arr)."\e[0m";
+    }
+    else{
+      echo "\e[92m".$arr."\e[0m";
+    }
+  }
+  else{
+    echo "\e[91mNot Detected\e[0m";
+  }
+}
+
 function cloudflaredetect($reallink){
 
-  $urlhh    = "http://api.hackertarget.com/httpheaders/?q=" . $reallink;
-  $resulthh = file_get_contents($urlhh);
-  if (strpos($resulthh, 'cloudflare') !== false)
+  $headers = get_headers($reallink, true)['Server'];
+  if (in_array('cloudflare', $headers))
     {
       echo "\e[91mDetected\n\e[0m";
     }
@@ -46,8 +61,6 @@ function cloudflaredetect($reallink){
       echo "\e[92mNot Detected\n\e[0m";
     }
 }
-
-
 function CMSdetect($reallink){
   $cmssc  = readcontents($reallink);
   if (strpos($cmssc, '/wp-content/') !== false)
