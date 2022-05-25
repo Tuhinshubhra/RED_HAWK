@@ -6,7 +6,7 @@ echo $cln;
 function update()
     {
         echo "\n\e[91m\e[1m[+] RED HAWK UPDATE UTILITY [+]\nUpdate in progress, please wait...\n\n$cln";
-        system("git fetch origin && git reset --hard origin/master && git clean -f -d");
+        system("git checkout . && git pull ");
         echo $bold . $fgreen . "[i] Job finished successfully! Please Restart RED HAWK \n" . $cln;
         exit;
     }
@@ -749,10 +749,10 @@ askscan:
           {
             echo "\n\n" . $bold . $yellow . "-[ RED HAWK Update Corner]-\n\n" . $cln;
             echo $bold . "[i] Fetching Stuffs .... \n" . $cln;
-            $latestversion = readcontents("https://raw.githubusercontent.com/Tuhinshubhra/RED_HAWK/master/version.txt");
-            echo $bold . $blue . "[C] Current Version: " . $rhversion . $cln;
+            $latestversion = readcontents("https://raw.githubusercontent.com/Zaeem20/RED_HAWK/master/version.txt");
+            echo $bold . $blue . "[C] Current Version: " . $version . $cln;
             echo "\n" . $bold . $lblue . "[L] Latest Version:  " . $latestversion . $cln;
-            if ($latestversion > $rhversion)
+            if ($latestversion > $version)
               {
                 askupdate:
                     userinput("There's An Update Available, Would You Like To Update Automatically?");
@@ -776,7 +776,7 @@ askscan:
                     }
             
               }
-            elseif ($rhversion == $latestversion)
+            elseif ($version == $latestversion)
               {
                 echo $bold . $fgreen . "\n[i] You are already running the latest version of RED HAWK. \n\n" . $cln;
                 goto scanlist;
