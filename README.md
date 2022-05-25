@@ -127,7 +127,7 @@ Can't donate? well that's no problem just drop a **THANK YOU** this will motivat
 
 # TODOs
 
-- Make a proper update option ( Installs current version automatically )
+- Make a proper update option ( Installs current version automatically ) (Done)
 - Add more CMS to the detector
 - Improve The WordPress Scanner ( Add User, Theme & Plugins Enumeration )
 - Create a web version of the scanner
