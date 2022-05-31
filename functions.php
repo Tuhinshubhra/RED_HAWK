@@ -52,8 +52,10 @@ function WAF_Detect($domains){
 function cloudflaredetect($reallink){
 
   $headers = get_headers($reallink, true)['Server'];
-  if (in_array('cloudflare', $headers))
-    {
+  if (is_string($headers) == "cloudflare") {
+    echo "\e[91mDetected\e[0m";
+  }
+  elseif (in_array('cloudflare', $headers)){
       echo "\e[91mDetected\n\e[0m";
     }
   else
