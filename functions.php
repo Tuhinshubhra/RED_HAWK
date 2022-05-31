@@ -53,7 +53,7 @@ function cloudflaredetect($reallink){
 
   $headers = get_headers($reallink, true)['Server'];
   if (is_string($headers) == "cloudflare") {
-    echo "\e[91mDetected\e[0m";
+    echo "\e[91mDetected\n\e[0m";
   }
   elseif (in_array('cloudflare', $headers)){
       echo "\e[91mDetected\n\e[0m";
