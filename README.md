@@ -2,8 +2,9 @@
 	<img src="https://i.imgur.com/GNWwMFb.png" width="600px">
 </p>
 
-#### Version 2.0.0
-#### By R3D#@0R_2H1N A.K.A Tuhinshubhra
+#### Version 2.1.0
+#### Coded By R3D#@0R_2H1N A.K.A Tuhinshubhra
+#### Maintained By Zaeem20 A.K.A Zaeem
 All in one tool for **Information Gathering** and **Vulnerability Scanning**
 
 # Scans That You Can Perform Using RED HAWK :
@@ -12,14 +13,15 @@ All in one tool for **Information Gathering** and **Vulnerability Scanning**
 	- IP Address
 	- Web Server Detection `IMPROVED`
 	- CMS Detection
-	- Cloudflare Detection
+	- Cloudflare Detection `IMPROVED`
+	- WAF Detection `ADDED`
 	- robots.txt Scanner
-+ Whois Lookup `IMPROVED`
++ Whois Lookup `FIXED`
 + Geo-IP Lookup
 + Grab Banners `IMPROVED`
 + DNS Lookup
 + Subnet Calculator
-+ Nmap Port Scan
++ Nmap Port Scan `FIXED`
 + Sub-Domain Scanner `IMPROVED`
 	- Sub Domain
 	- IP Address
@@ -49,6 +51,7 @@ All in one tool for **Information Gathering** and **Vulnerability Scanning**
     - Version 1.0.0 [11-06-2017]
     - Version 1.1.0 [15-06-2017]
     - Version 2.0.0 [11-08-2017]
+	- Version 2.1.0 [23-05-2022]
 
 # Changelog:
 - Version 1.0.0
@@ -68,6 +71,12 @@ All in one tool for **Information Gathering** and **Vulnerability Scanning**
 	- Added `Update` option
 	- RED HAWK Banner Updated
 	- Many Other Internal Fixes
+- Version 2.1.0
+	- `WAF Detection` Added
+	- `Cloudflare Detection` Improved
+	- `NMAP and WHOIS` Fixed
+	- `RED HAWK Banner` Updated
+	- `BUGS and Error` Fixed
 
 # Installation:
 1. Run The Tool and Type `fix` This will Install All Required Modules.
@@ -118,7 +127,7 @@ Can't donate? well that's no problem just drop a **THANK YOU** this will motivat
 
 # TODOs
 
-- Make a proper update option ( Installs current version automatically )
+- Make a proper update option ( Installs current version automatically ) (Done)
 - Add more CMS to the detector
 - Improve The WordPress Scanner ( Add User, Theme & Plugins Enumeration )
 - Create a web version of the scanner

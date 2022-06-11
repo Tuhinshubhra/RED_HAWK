@@ -21,7 +21,12 @@ $redbg = "\e[101m";
 $grey = "\e[37m";
 $cyan = "\e[36m";
 $bold   = "\e[1m";
+$version = trim(fgets(fopen('version.txt', 'r')));
 function redhawk_banner(){
+  global $version;
+  $m = '\e[1:92m';
+  $e = '\e[0m';
+
   echo "\e[91;1m
            All In One Tool For\e[36m Information Gathering\e[91m And\e[32m Vulnerability Scanning\e[91m
                                                               .  .  .  .
@@ -32,12 +37,12 @@ function redhawk_banner(){
   ██████╗ ███████╗██████╗    ###     ###    @@@@ @@@@    .   (\ |||||| /)   .  |   | /   /
   ██╔══██╗██╔════╝██╔══██╗   ###     ###   @@@@   @@@@   |  (\  |/  \|  /)  |  |   |/   /
   ██████╔╝█████╗  ██║  ██║   ###########   @@@@@@@@@@@     (\             )    |       /
-  ██╔══██╗██╔══╝  ██║  ██║   ###########   @@@@@@@@@@@    (\ \e[93m Ver  2.0.0\e[91m  /)   |       \
+  ██╔══██╗██╔══╝  ██║  ██║   ###########   @@@@@@@@@@@    (\ \e[93m Ver  ".$version."\e[91m  /)   |       \
   ██║  ██║███████╗██████╔╝   ###     ###   @@@     @@@     \      \/      /    |   |\   \
   ╚═╝  ╚═╝╚══════╝╚═════╝    ###     ###   @@@     @@@      \____/\/\____/     |___| \___\
                                                                 |0\/0|
          {C} Coded By - R3D#@X0R_2H1N A.K.A Tuhinshubhra         \/\/
-                                                                  \/ \e[97m [$] Shout Out - You ;)
+         \e[1;92m{M} Maintained By\e[1;91m - Zaeem20 A.K.A Zaeem                  \/ \e[97m [$] Shout Out - You ;)
 \e[32m
   \n";
 }
